@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 
 import { ThemeProvider } from 'styled-components'
+import { Provider } from 'react-redux'
 import Routes from './config/router'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -13,11 +14,15 @@ library.add(fas, far, fab)
 
 import { themeLight } from './config/theme'
 
+import { store } from './config/store'
+
 function App() {
   return (
-    <ThemeProvider theme={themeLight}>
-      <Routes></Routes>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={themeLight}>
+        <Routes></Routes>
+      </ThemeProvider>
+    </Provider>
   )
 }
 
