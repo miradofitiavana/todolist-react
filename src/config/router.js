@@ -6,15 +6,19 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
+import Counter from '../screens/counter'
 
 import Home from '../screens/home'
+import Potter from '../screens/potter'
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
+        <Route exact path='/counter' component={Counter} />
         <Route exact path='/home' component={Home} />
-        <Redirect to='/home'></Redirect>
+        <Route exact path='/potter' component={Potter} />
+        <Redirect to='/counter'></Redirect>
       </Switch>
     </Router>
   )

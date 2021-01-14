@@ -1,7 +1,7 @@
-import { INCREMENT_COUNTER } from '../actions/counter'
+import { DECREMENT_COUNTER, INCREMENT_COUNTER } from '../actions/counter'
 
 const initialState = {
-  counter: 0
+  counterValue: 0
 }
 
 export default (state = initialState, action) => {
@@ -9,7 +9,13 @@ export default (state = initialState, action) => {
     case INCREMENT_COUNTER:
       return {
         ...state,
-        counter: state.counter + 1
+        counterValue: state.counterValue + 1
+      }
+
+    case DECREMENT_COUNTER:
+      return {
+        ...state,
+        counterValue: state.counterValue - action.payload
       }
 
     default:
